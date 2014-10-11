@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		A65117C819E96B700012DF93 /* EditFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65117C719E96B700012DF93 /* EditFriendsTableViewController.m */; };
+		A65117CB19E981740012DF93 /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65117CA19E981740012DF93 /* FriendsTableViewController.m */; };
+		A65117CE19E998E20012DF93 /* RecipientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65117CD19E998E20012DF93 /* RecipientsTableViewController.m */; };
 		A6A1977019E8D84900478496 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1976F19E8D84900478496 /* main.m */; };
 		A6A1977319E8D84900478496 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1977219E8D84900478496 /* AppDelegate.m */; };
 		A6A1977C19E8D84900478496 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A6A1977A19E8D84900478496 /* Main.storyboard */; };
@@ -45,6 +47,10 @@
 /* Begin PBXFileReference section */
 		A65117C619E96B700012DF93 /* EditFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsTableViewController.h; sourceTree = "<group>"; };
 		A65117C719E96B700012DF93 /* EditFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsTableViewController.m; sourceTree = "<group>"; };
+		A65117C919E981740012DF93 /* FriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewController.h; sourceTree = "<group>"; };
+		A65117CA19E981740012DF93 /* FriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendsTableViewController.m; sourceTree = "<group>"; };
+		A65117CC19E998E20012DF93 /* RecipientsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecipientsTableViewController.h; sourceTree = "<group>"; };
+		A65117CD19E998E20012DF93 /* RecipientsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecipientsTableViewController.m; sourceTree = "<group>"; };
 		A6A1976A19E8D84900478496 /* SharedSpace.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SharedSpace.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A6A1976E19E8D84900478496 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A6A1976F19E8D84900478496 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -133,8 +139,12 @@
 				A6A1977119E8D84900478496 /* AppDelegate.h */,
 				A6A1977219E8D84900478496 /* AppDelegate.m */,
 				A6A1977A19E8D84900478496 /* Main.storyboard */,
+				A65117CC19E998E20012DF93 /* RecipientsTableViewController.h */,
+				A65117CD19E998E20012DF93 /* RecipientsTableViewController.m */,
 				A65117C619E96B700012DF93 /* EditFriendsTableViewController.h */,
 				A65117C719E96B700012DF93 /* EditFriendsTableViewController.m */,
+				A65117C919E981740012DF93 /* FriendsTableViewController.h */,
+				A65117CA19E981740012DF93 /* FriendsTableViewController.m */,
 				A6A1979619E8E46200478496 /* RequestTableViewController.h */,
 				A6A1979F19E8F33500478496 /* NewRequestViewController.h */,
 				A6A197A019E8F33500478496 /* NewRequestViewController.m */,
@@ -296,6 +306,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				A65117C819E96B700012DF93 /* EditFriendsTableViewController.m in Sources */,
+				A65117CE19E998E20012DF93 /* RecipientsTableViewController.m in Sources */,
+				A65117CB19E981740012DF93 /* FriendsTableViewController.m in Sources */,
 				A6A1979819E8E46200478496 /* RequestTableViewController.m in Sources */,
 				A6A1979E19E8EB4B00478496 /* SignUpViewController.m in Sources */,
 				A6A1977319E8D84900478496 /* AppDelegate.m in Sources */,

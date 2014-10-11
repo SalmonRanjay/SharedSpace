@@ -17,6 +17,15 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *enterRequestField;
 @property (weak, nonatomic) IBOutlet UITextField *enterCostField;
+@property (weak, nonatomic) IBOutlet UITextField *enterDescriptionField;
+@property (weak, nonatomic) IBOutlet UITextField *enterDate;
+
+
+@property (nonatomic, strong) NSString *request;
+@property (nonatomic, strong) NSString *cost;
+@property (nonatomic, strong) NSString *desc;
+@property (nonatomic, strong) NSString *date;
+
 
 - (IBAction)addRequestButton:(id)sender;
 

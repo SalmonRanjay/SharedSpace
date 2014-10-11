@@ -7,6 +7,7 @@
 //
 
 #import "NewRequestViewController.h"
+#import "RecipientsTableViewController.h"
 
 @interface NewRequestViewController ()
 
@@ -19,20 +20,55 @@
     // Do any additional setup after loading the view.
 }
 
+-(void) viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    
+   
+
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
-/*
+- (BOOL) shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender{
+
+    
+    
+    if ([self.request length] == 0 || [self.cost length] == 0 || [self.desc length] == 0 || [self.date length] == 0){
+        
+        return NO;
+    }else{
+        
+        return YES;
+    }
+}
+
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
+    
+    if ([segue.identifier isEqual:@"selectRecipients"]) {
+        UINavigationController *navController = (UINavigationController *)segue.destinationViewController;
+        
+        RecipientsTableViewController *recipientsController = (RecipientsTableViewController*)navController.visibleViewController;
+        
+        recipientsController.event = @"An event";
+        //    recipientsController.event =[[NSString alloc] initWithString:self.request];
+        //    recipientsController.cost = [[NSString alloc] initWithString:self.cost];
+        //    recipientsController.desc = [[NSString alloc] initWithString:self.desc];
+        //    recipientsController.date = [[NSString alloc] initWithString:self.date];
+    }
+    
+    
 }
-*/
+
 
 // creating helper method to dismiss view controller
 - (void) dissmissSelf{
@@ -45,11 +81,14 @@
 }
 - (IBAction)addRequestButton:(id)sender {
     
-    // check if empty fields
-    NSString *request = self.enterRequestField.text;
-    NSString *cost = self.enterCostField.text;
+    self.request = self.enterRequestField.text;
+    self.cost = self.enterCostField.text;
+    self.desc = self.enterDescriptionField.text;
+    self.date = self.enterDate.text;
     
-    if ([request length] == 0 || [cost length] == 0) {
+    NSLog(@"%@", self.request);
+    
+    if ([self.request length] == 0 || [self.cost length] == 0 || [self.desc length] == 0 || [self.date length] == 0) {
         // display ui alert view
         
         UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooops" message:@"Make sure all fields are entered" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
@@ -58,7 +97,7 @@
         
     }else{
     
-            // save object to parse
+        /*    // save object to parse
         PFObject *pfrequest = [PFObject objectWithClassName:@"Requests"];
         
         pfrequest[@"newRequest"] = request;
@@ -67,6 +106,8 @@
         [pfrequest saveInBackground];
         
         [self dissmissSelf];
+         
+         */
         
     }
 }
