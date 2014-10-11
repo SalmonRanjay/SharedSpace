@@ -20,6 +20,7 @@
     
     // query all users in the parse database
     PFQuery *query = [PFUser query];
+    [query whereKey:@"group" equalTo:@"home"];
     [query orderByAscending:@"username"]; // order in alphabetical order by user name
     // run query
     [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {

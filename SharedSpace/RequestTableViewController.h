@@ -10,6 +10,8 @@
 
 @interface RequestTableViewController : UITableViewController
 
+@property (nonatomic,strong) NSMutableArray *messages;
+
 @property (nonatomic, strong) NSMutableArray *requestArray;
 - (IBAction)logout:(id)sender;
 

@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
 @interface RecipientsTableViewController : UITableViewController
 
@@ -15,6 +16,20 @@
 @property (nonatomic, strong) NSString *desc;
 @property (nonatomic, strong) NSString *date;
 
+
+@property (nonatomic, strong) PFRelation *friendsRelation;
+
+@property (nonatomic, strong) NSArray *friends;
+
+@property (nonatomic,strong) PFUser *userSelected;
+
+@property (nonatomic,strong) NSMutableArray *recipients;
+
+- (void) queryFriendsRelation;
+
+- (IBAction)send:(id)sender;
+
+- (IBAction)cancel:(id)sender;
 
 
 @end

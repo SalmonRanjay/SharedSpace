@@ -59,11 +59,11 @@
         
         RecipientsTableViewController *recipientsController = (RecipientsTableViewController*)navController.visibleViewController;
         
-        recipientsController.event = @"An event";
-        //    recipientsController.event =[[NSString alloc] initWithString:self.request];
-        //    recipientsController.cost = [[NSString alloc] initWithString:self.cost];
-        //    recipientsController.desc = [[NSString alloc] initWithString:self.desc];
-        //    recipientsController.date = [[NSString alloc] initWithString:self.date];
+       
+            recipientsController.event =[[NSString alloc] initWithString:self.request];
+            recipientsController.cost = [[NSString alloc] initWithString:self.cost];
+            recipientsController.desc = [[NSString alloc] initWithString:self.desc];
+            recipientsController.date = [[NSString alloc] initWithString:self.date];
     }
     
     
@@ -73,6 +73,15 @@
 // creating helper method to dismiss view controller
 - (void) dissmissSelf{
     [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
+}
+
+-(void) reset{
+    
+    self.enterRequestField.text = @"";
+     self.enterDate.text = @"";
+     self.enterDescriptionField.text = @"";
+     self.enterCostField.text = @"";
     
 }
 
@@ -108,6 +117,8 @@
         [self dissmissSelf];
          
          */
+        
+        [self reset];
         
     }
 }

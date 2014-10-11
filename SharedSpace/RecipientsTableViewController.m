@@ -17,89 +17,149 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
+    self.recipients = [[NSMutableArray alloc] init];
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-    NSLog(@"Event: %@ ",self.event);
-    NSLog(@"cost: %@ ",self.cost);
-    NSLog(@"desc: %@ ",self.desc);
-    NSLog(@"date: %@ ",self.date);
+    // getting the relation
+    self.friendsRelation = [[PFUser currentUser] objectForKey:@"friendsRelation"];
+    
+    
     
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+- (void) viewWillAppear:(BOOL)animated{
+    
+    [self queryFriendsRelation];
 }
+
+// Passing the friends array to the edit friends screens nsmutable array
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+    
+//    if ([segue.identifier isEqualToString:@"showEditFriends"]) {
+//        
+//        // getting the destination view controller in editfriends
+//        // Cast it to the view controller
+//        EditFriendsTableViewController *viewController = (EditFriendsTableViewController *)segue.destinationViewController;
+//        
+//        // setting the  property (NSMutable Array *friends) in edit Friends
+//        // with the array or property self.friends from the friends class
+//        viewController.friends = [NSMutableArray arrayWithArray:self.friends];
+//    }
+//    
+    
+}
+
 
 #pragma mark - Table view data source
 
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
+    
     // Return the number of sections.
-    return 0;
+    return 1;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
     // Return the number of rows in the section.
-    return 0;
+    return self.friends.count;
 }
 
-/*
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    
+    cell.textLabel.text = user.username;
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+- (void) tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    
+     [self.tableView deselectRowAtIndexPath:indexPath animated:NO];
+//    self.userSelected = [self.friends objectAtIndex:indexPath.row];
+//    
+//    NSLog(@"%@",self.userSelected);
+    
+    UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+    
+    
+    
+    PFUser *user = [self.friends objectAtIndex:indexPath.row];
+    
+    // toggle checkmark
+    if (cell.accessoryType == UITableViewCellAccessoryNone) {
+        cell.accessoryType = UITableViewCellAccessoryCheckmark;
+        
+        // adding recipient to the array
+        [self.recipients addObject:user.objectId];
+        
+    }else{
+        
+        // unchecking person and deleting hem
+        cell.accessoryType = UITableViewCellAccessoryNone;
+        [self.recipients removeObject:user.objectId];
+    }
+
+    
+    
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+#pragma mark - Helper methods
+
+- (void) queryFriendsRelation{
+    
+    
+    PFQuery *query = [self.friendsRelation query];
+    [query orderByAscending:@"username"];
+    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+        if (error) {
+            NSLog(@"Error %@ %@",error, [error userInfo]);
+        }else{
+            
+            self.friends = objects;
+            [self.tableView reloadData];
+        }
+    }];
+    
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath {
+
+- (void) dissmissSelf{
+    [self.presentingViewController dismissViewControllerAnimated:YES completion:nil];
+    
 }
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath {
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
+
+- (IBAction)send:(id)sender {
+    
+       // save object to parse
+     PFObject *pfrequest = [PFObject objectWithClassName:@"Requests"];
+    
+    NSLog(@"Recipients: %@", self.recipients);
+     
+     pfrequest[@"newRequest"] = self.event;
+     pfrequest[@"newCost"] = self.cost;
+    pfrequest[@"newDescription"] = self.desc;
+    pfrequest[@"sender"] = [PFUser currentUser];
+    pfrequest[@"sendeName"] = [[PFUser currentUser] username];
+    pfrequest[@"recipients"] = self.recipients;
+    pfrequest[@"newDate"] = self.date;
+     
+     [pfrequest saveInBackground];
+     
+     [self dissmissSelf];
+    [self.tabBarController setSelectedIndex:0];
+    
+     
+    
+
+    
 }
-*/
 
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+- (IBAction)cancel:(id)sender {
+    
+    [self dissmissSelf];
 }
-*/
 
 @end

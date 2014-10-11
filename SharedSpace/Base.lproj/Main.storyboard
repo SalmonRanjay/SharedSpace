@@ -564,7 +564,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="IpI-ea-wNj">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="IpI-ea-wNj">
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="IpI-ea-wNj" id="Xgv-hQ-lRv">
                                     <autoresizingMask key="autoresizingMask"/>
@@ -577,8 +577,16 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="qVd-0r-OBP">
-                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OBs-hD-f4W"/>
-                        <barButtonItem key="rightBarButtonItem" title="Send" id="jgu-7s-vR2"/>
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="OBs-hD-f4W">
+                            <connections>
+                                <action selector="cancel:" destination="oXD-vn-UM3" id="dSP-MV-QkF"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Send" id="jgu-7s-vR2">
+                            <connections>
+                                <action selector="send:" destination="oXD-vn-UM3" id="XDn-ua-XCK"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="uRy-qw-Gdn" userLabel="First Responder" sceneMemberID="firstResponder"/>
