@@ -43,4 +43,31 @@
 - (IBAction)cancel:(id)sender {
     [self dissmissSelf];
 }
+- (IBAction)addRequestButton:(id)sender {
+    
+    // check if empty fields
+    NSString *request = self.enterRequestField.text;
+    NSString *cost = self.enterCostField.text;
+    
+    if ([request length] == 0 || [cost length] == 0) {
+        // display ui alert view
+        
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Ooops" message:@"Make sure all fields are entered" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [alert show];
+        
+    }else{
+    
+            // save object to parse
+        PFObject *pfrequest = [PFObject objectWithClassName:@"Requests"];
+        
+        pfrequest[@"newRequest"] = request;
+        pfrequest[@"newCost"] = cost;
+        
+        [pfrequest saveInBackground];
+        
+        [self dissmissSelf];
+        
+    }
+}
 @end

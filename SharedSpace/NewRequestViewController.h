@@ -8,8 +8,16 @@
 
 #import <UIKit/UIKit.h>
 #import "RequestTableViewController.h"
+#import <Parse/Parse.h>
 
 @interface NewRequestViewController : UIViewController
+
+
 - (IBAction)cancel:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextField *enterRequestField;
+@property (weak, nonatomic) IBOutlet UITextField *enterCostField;
+
+- (IBAction)addRequestButton:(id)sender;
 
 @end
