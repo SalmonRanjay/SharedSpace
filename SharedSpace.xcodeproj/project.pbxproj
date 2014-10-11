@@ -14,6 +14,8 @@
 		A6A1978119E8D84900478496 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = A6A1977F19E8D84900478496 /* LaunchScreen.xib */; };
 		A6A1978D19E8D84900478496 /* SharedSpaceTests.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1978C19E8D84900478496 /* SharedSpaceTests.m */; };
 		A6A1979819E8E46200478496 /* RequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1979719E8E46200478496 /* RequestTableViewController.m */; };
+		A6A1979B19E8EB3700478496 /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1979A19E8EB3700478496 /* InboxViewController.m */; };
+		A6A1979E19E8EB4B00478496 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1979D19E8EB4B00478496 /* SignUpViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,6 +42,10 @@
 		A6A1978C19E8D84900478496 /* SharedSpaceTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SharedSpaceTests.m; sourceTree = "<group>"; };
 		A6A1979619E8E46200478496 /* RequestTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RequestTableViewController.h; sourceTree = "<group>"; };
 		A6A1979719E8E46200478496 /* RequestTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RequestTableViewController.m; sourceTree = "<group>"; };
+		A6A1979919E8EB3700478496 /* InboxViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InboxViewController.h; sourceTree = "<group>"; };
+		A6A1979A19E8EB3700478496 /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
+		A6A1979C19E8EB4B00478496 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		A6A1979D19E8EB4B00478496 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -86,6 +92,10 @@
 				A6A1977A19E8D84900478496 /* Main.storyboard */,
 				A6A1979619E8E46200478496 /* RequestTableViewController.h */,
 				A6A1979719E8E46200478496 /* RequestTableViewController.m */,
+				A6A1979919E8EB3700478496 /* InboxViewController.h */,
+				A6A1979A19E8EB3700478496 /* InboxViewController.m */,
+				A6A1979C19E8EB4B00478496 /* SignUpViewController.h */,
+				A6A1979D19E8EB4B00478496 /* SignUpViewController.m */,
 				A6A1977D19E8D84900478496 /* Images.xcassets */,
 				A6A1977F19E8D84900478496 /* LaunchScreen.xib */,
 				A6A1976D19E8D84900478496 /* Supporting Files */,
@@ -220,8 +230,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				A6A1979819E8E46200478496 /* RequestTableViewController.m in Sources */,
+				A6A1979E19E8EB4B00478496 /* SignUpViewController.m in Sources */,
 				A6A1977319E8D84900478496 /* AppDelegate.m in Sources */,
 				A6A1977019E8D84900478496 /* main.m in Sources */,
+				A6A1979B19E8EB3700478496 /* InboxViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -412,6 +424,7 @@
 				A6A1979219E8D84900478496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A6A1979319E8D84900478496 /* Build configuration list for PBXNativeTarget "SharedSpaceTests" */ = {
 			isa = XCConfigurationList;
@@ -420,6 +433,7 @@
 				A6A1979519E8D84900478496 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

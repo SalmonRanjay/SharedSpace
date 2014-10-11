@@ -25,10 +25,10 @@
             </objects>
             <point key="canvasLocation" x="-114" y="42"/>
         </scene>
-        <!--View Controller-->
+        <!--Inbox View Controller-->
         <scene sceneID="1en-g4-qhD">
             <objects>
-                <viewController id="DXk-ed-01n" sceneMemberID="viewController">
+                <viewController id="DXk-ed-01n" customClass="InboxViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Rlx-bk-1n4"/>
                         <viewControllerLayoutGuide type="bottom" id="siF-8D-Eva"/>
@@ -166,10 +166,10 @@
             </objects>
             <point key="canvasLocation" x="1695" y="-863.25"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="7mV-Ll-NhP">
             <objects>
-                <viewController id="Fll-Du-zgD" sceneMemberID="viewController">
+                <viewController id="Fll-Du-zgD" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="2Hz-Gg-qBd"/>
                         <viewControllerLayoutGuide type="bottom" id="8wT-qe-CMR"/>
