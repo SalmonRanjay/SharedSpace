@@ -16,7 +16,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+    [self.navigationItem setHidesBackButton:YES];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -34,4 +35,43 @@
 }
 */
 
+- (IBAction)login:(id)sender {
+    
+    NSString *username = [[self.usernameField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]] lowercaseString];
+    
+    NSString *password = [self.passwordField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+   
+    
+    if ([username length] == 0 || [password length] == 0 ) {
+        
+        // display error dialogue
+        UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Ooops" message:@"Please make sure you enter a username, password and group" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+        
+        [alertview show];
+        
+    }else{
+        
+      // login in user
+        [PFUser logInWithUsernameInBackground:username password:password block:^(PFUser *user, NSError *error) {
+            //
+            if (!error) {
+                // Login the user
+                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+            }else{
+            
+                // display error message
+                UIAlertView *alertview = [[UIAlertView alloc] initWithTitle:@"Sorry" message:[error.userInfo objectForKey:@"error"] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil];
+                
+                [alertview show];
+            
+            }
+        }];
+        
+    }
+
+    
+    
+}
 @end

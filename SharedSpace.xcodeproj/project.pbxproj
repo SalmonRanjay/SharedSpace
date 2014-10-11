@@ -16,6 +16,19 @@
 		A6A1979819E8E46200478496 /* RequestTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1979719E8E46200478496 /* RequestTableViewController.m */; };
 		A6A1979B19E8EB3700478496 /* InboxViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1979A19E8EB3700478496 /* InboxViewController.m */; };
 		A6A1979E19E8EB4B00478496 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A1979D19E8EB4B00478496 /* SignUpViewController.m */; };
+		A6A197A119E8F33500478496 /* NewRequestViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A6A197A019E8F33500478496 /* NewRequestViewController.m */; };
+		A6A197BE19E914C100478496 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197BC19E914C100478496 /* Bolts.framework */; };
+		A6A197BF19E914C100478496 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197BD19E914C100478496 /* Parse.framework */; };
+		A6A197CA19E9158400478496 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C019E9158400478496 /* AudioToolbox.framework */; };
+		A6A197CB19E9158400478496 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C119E9158400478496 /* CFNetwork.framework */; };
+		A6A197CC19E9158400478496 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C219E9158400478496 /* CoreGraphics.framework */; };
+		A6A197CD19E9158400478496 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C319E9158400478496 /* CoreLocation.framework */; };
+		A6A197CE19E9158400478496 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C419E9158400478496 /* libz.dylib */; };
+		A6A197CF19E9158400478496 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C519E9158400478496 /* MobileCoreServices.framework */; };
+		A6A197D019E9158400478496 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C619E9158400478496 /* QuartzCore.framework */; };
+		A6A197D119E9158400478496 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C719E9158400478496 /* Security.framework */; };
+		A6A197D219E9158400478496 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C819E9158400478496 /* StoreKit.framework */; };
+		A6A197D319E9158400478496 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A6A197C919E9158400478496 /* SystemConfiguration.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -46,6 +59,20 @@
 		A6A1979A19E8EB3700478496 /* InboxViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = InboxViewController.m; sourceTree = "<group>"; };
 		A6A1979C19E8EB4B00478496 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
 		A6A1979D19E8EB4B00478496 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
+		A6A1979F19E8F33500478496 /* NewRequestViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NewRequestViewController.h; sourceTree = "<group>"; };
+		A6A197A019E8F33500478496 /* NewRequestViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NewRequestViewController.m; sourceTree = "<group>"; };
+		A6A197BC19E914C100478496 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		A6A197BD19E914C100478496 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		A6A197C019E9158400478496 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A6A197C119E9158400478496 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A6A197C219E9158400478496 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A6A197C319E9158400478496 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A6A197C419E9158400478496 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		A6A197C519E9158400478496 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		A6A197C619E9158400478496 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A6A197C719E9158400478496 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A6A197C819E9158400478496 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A6A197C919E9158400478496 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +80,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A6A197CA19E9158400478496 /* AudioToolbox.framework in Frameworks */,
+				A6A197CB19E9158400478496 /* CFNetwork.framework in Frameworks */,
+				A6A197CC19E9158400478496 /* CoreGraphics.framework in Frameworks */,
+				A6A197CD19E9158400478496 /* CoreLocation.framework in Frameworks */,
+				A6A197CE19E9158400478496 /* libz.dylib in Frameworks */,
+				A6A197CF19E9158400478496 /* MobileCoreServices.framework in Frameworks */,
+				A6A197D019E9158400478496 /* QuartzCore.framework in Frameworks */,
+				A6A197D119E9158400478496 /* Security.framework in Frameworks */,
+				A6A197D219E9158400478496 /* StoreKit.framework in Frameworks */,
+				A6A197D319E9158400478496 /* SystemConfiguration.framework in Frameworks */,
+				A6A197BF19E914C100478496 /* Parse.framework in Frameworks */,
+				A6A197BE19E914C100478496 /* Bolts.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,6 +108,7 @@
 		A6A1976119E8D84900478496 = {
 			isa = PBXGroup;
 			children = (
+				A6A197BB19E914A200478496 /* Frameworks */,
 				A6A1976C19E8D84900478496 /* SharedSpace */,
 				A6A1978919E8D84900478496 /* SharedSpaceTests */,
 				A6A1976B19E8D84900478496 /* Products */,
@@ -91,6 +131,8 @@
 				A6A1977219E8D84900478496 /* AppDelegate.m */,
 				A6A1977A19E8D84900478496 /* Main.storyboard */,
 				A6A1979619E8E46200478496 /* RequestTableViewController.h */,
+				A6A1979F19E8F33500478496 /* NewRequestViewController.h */,
+				A6A197A019E8F33500478496 /* NewRequestViewController.m */,
 				A6A1979719E8E46200478496 /* RequestTableViewController.m */,
 				A6A1979919E8EB3700478496 /* InboxViewController.h */,
 				A6A1979A19E8EB3700478496 /* InboxViewController.m */,
@@ -127,6 +169,25 @@
 				A6A1978B19E8D84900478496 /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		A6A197BB19E914A200478496 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A6A197C019E9158400478496 /* AudioToolbox.framework */,
+				A6A197C119E9158400478496 /* CFNetwork.framework */,
+				A6A197C219E9158400478496 /* CoreGraphics.framework */,
+				A6A197C319E9158400478496 /* CoreLocation.framework */,
+				A6A197C419E9158400478496 /* libz.dylib */,
+				A6A197C519E9158400478496 /* MobileCoreServices.framework */,
+				A6A197C619E9158400478496 /* QuartzCore.framework */,
+				A6A197C719E9158400478496 /* Security.framework */,
+				A6A197C819E9158400478496 /* StoreKit.framework */,
+				A6A197C919E9158400478496 /* SystemConfiguration.framework */,
+				A6A197BC19E914C100478496 /* Bolts.framework */,
+				A6A197BD19E914C100478496 /* Parse.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -234,6 +295,7 @@
 				A6A1977319E8D84900478496 /* AppDelegate.m in Sources */,
 				A6A1977019E8D84900478496 /* main.m in Sources */,
 				A6A1979B19E8EB3700478496 /* InboxViewController.m in Sources */,
+				A6A197A119E8F33500478496 /* NewRequestViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,6 +417,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SharedSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -365,6 +431,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = SharedSpace/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
