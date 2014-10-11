@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A62CD90719E9D5500050D813 /* MessageDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A62CD90619E9D5500050D813 /* MessageDetailViewController.m */; };
+		A62CD90C19E9D9FF0050D813 /* Gradient-Overlay_02.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CD90919E9D9FF0050D813 /* Gradient-Overlay_02.png */; };
+		A62CD90D19E9D9FF0050D813 /* Gradient-Overlay_04.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CD90A19E9D9FF0050D813 /* Gradient-Overlay_04.png */; };
+		A62CD90E19E9D9FF0050D813 /* Gradient-Overlay_06.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CD90B19E9D9FF0050D813 /* Gradient-Overlay_06.png */; };
+		A62CD91319E9DEBF0050D813 /* friends.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CD90F19E9DEBF0050D813 /* friends.png */; };
+		A62CD91419E9DEBF0050D813 /* friends@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CD91019E9DEBF0050D813 /* friends@2x.png */; };
+		A62CD91519E9DEBF0050D813 /* inbox.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CD91119E9DEBF0050D813 /* inbox.png */; };
+		A62CD91619E9DEBF0050D813 /* inbox@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = A62CD91219E9DEBF0050D813 /* inbox@2x.png */; };
 		A65117C819E96B700012DF93 /* EditFriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65117C719E96B700012DF93 /* EditFriendsTableViewController.m */; };
 		A65117CB19E981740012DF93 /* FriendsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65117CA19E981740012DF93 /* FriendsTableViewController.m */; };
 		A65117CE19E998E20012DF93 /* RecipientsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A65117CD19E998E20012DF93 /* RecipientsTableViewController.m */; };
@@ -45,6 +53,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A62CD90519E9D5500050D813 /* MessageDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageDetailViewController.h; sourceTree = "<group>"; };
+		A62CD90619E9D5500050D813 /* MessageDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageDetailViewController.m; sourceTree = "<group>"; };
+		A62CD90919E9D9FF0050D813 /* Gradient-Overlay_02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gradient-Overlay_02.png"; sourceTree = "<group>"; };
+		A62CD90A19E9D9FF0050D813 /* Gradient-Overlay_04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gradient-Overlay_04.png"; sourceTree = "<group>"; };
+		A62CD90B19E9D9FF0050D813 /* Gradient-Overlay_06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Gradient-Overlay_06.png"; sourceTree = "<group>"; };
+		A62CD90F19E9DEBF0050D813 /* friends.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = friends.png; sourceTree = "<group>"; };
+		A62CD91019E9DEBF0050D813 /* friends@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "friends@2x.png"; sourceTree = "<group>"; };
+		A62CD91119E9DEBF0050D813 /* inbox.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = inbox.png; sourceTree = "<group>"; };
+		A62CD91219E9DEBF0050D813 /* inbox@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "inbox@2x.png"; sourceTree = "<group>"; };
 		A65117C619E96B700012DF93 /* EditFriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditFriendsTableViewController.h; sourceTree = "<group>"; };
 		A65117C719E96B700012DF93 /* EditFriendsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditFriendsTableViewController.m; sourceTree = "<group>"; };
 		A65117C919E981740012DF93 /* FriendsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendsTableViewController.h; sourceTree = "<group>"; };
@@ -114,9 +131,24 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A62CD90819E9D9AF0050D813 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				A62CD90919E9D9FF0050D813 /* Gradient-Overlay_02.png */,
+				A62CD90A19E9D9FF0050D813 /* Gradient-Overlay_04.png */,
+				A62CD90F19E9DEBF0050D813 /* friends.png */,
+				A62CD91019E9DEBF0050D813 /* friends@2x.png */,
+				A62CD91119E9DEBF0050D813 /* inbox.png */,
+				A62CD91219E9DEBF0050D813 /* inbox@2x.png */,
+				A62CD90B19E9D9FF0050D813 /* Gradient-Overlay_06.png */,
+			);
+			name = Images;
+			sourceTree = "<group>";
+		};
 		A6A1976119E8D84900478496 = {
 			isa = PBXGroup;
 			children = (
+				A62CD90819E9D9AF0050D813 /* Images */,
 				A6A197BB19E914A200478496 /* Frameworks */,
 				A6A1976C19E8D84900478496 /* SharedSpace */,
 				A6A1978919E8D84900478496 /* SharedSpaceTests */,
@@ -139,6 +171,8 @@
 				A6A1977119E8D84900478496 /* AppDelegate.h */,
 				A6A1977219E8D84900478496 /* AppDelegate.m */,
 				A6A1977A19E8D84900478496 /* Main.storyboard */,
+				A62CD90519E9D5500050D813 /* MessageDetailViewController.h */,
+				A62CD90619E9D5500050D813 /* MessageDetailViewController.m */,
 				A65117CC19E998E20012DF93 /* RecipientsTableViewController.h */,
 				A65117CD19E998E20012DF93 /* RecipientsTableViewController.m */,
 				A65117C619E96B700012DF93 /* EditFriendsTableViewController.h */,
@@ -285,9 +319,16 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A62CD91319E9DEBF0050D813 /* friends.png in Resources */,
+				A62CD90E19E9D9FF0050D813 /* Gradient-Overlay_06.png in Resources */,
+				A62CD90D19E9D9FF0050D813 /* Gradient-Overlay_04.png in Resources */,
+				A62CD90C19E9D9FF0050D813 /* Gradient-Overlay_02.png in Resources */,
 				A6A1977C19E8D84900478496 /* Main.storyboard in Resources */,
+				A62CD91619E9DEBF0050D813 /* inbox@2x.png in Resources */,
 				A6A1978119E8D84900478496 /* LaunchScreen.xib in Resources */,
+				A62CD91419E9DEBF0050D813 /* friends@2x.png in Resources */,
 				A6A1977E19E8D84900478496 /* Images.xcassets in Resources */,
+				A62CD91519E9DEBF0050D813 /* inbox.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,6 +349,7 @@
 				A65117C819E96B700012DF93 /* EditFriendsTableViewController.m in Sources */,
 				A65117CE19E998E20012DF93 /* RecipientsTableViewController.m in Sources */,
 				A65117CB19E981740012DF93 /* FriendsTableViewController.m in Sources */,
+				A62CD90719E9D5500050D813 /* MessageDetailViewController.m in Sources */,
 				A6A1979819E8E46200478496 /* RequestTableViewController.m in Sources */,
 				A6A1979E19E8EB4B00478496 /* SignUpViewController.m in Sources */,
 				A6A1977319E8D84900478496 /* AppDelegate.m in Sources */,

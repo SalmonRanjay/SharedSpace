@@ -7,6 +7,7 @@
 //
 
 #import "RequestTableViewController.h"
+#import "MessageDetailViewController.h"
 
 
 @interface RequestTableViewController ()
@@ -104,8 +105,9 @@
                                       reuseIdentifier:cellIdentifier];
     }
     
+    self.messages = @[object];
     // Configure the cell to show todo item with a priority at the bottom
-    cell.textLabel.text = object[@"senderName"];
+    cell.textLabel.text = object[@"sendeName"];
     cell.detailTextLabel.text = object[@"newDescription"];
     
     return cell;
@@ -131,6 +133,7 @@
 
 
 
+
 #pragma mark - Navigation
 
 // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -138,8 +141,18 @@
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
     
+    NSIndexPath *path =  [self.tableView indexPathForSelectedRow];
     if ([segue.identifier isEqualToString:@"showLogin"]) {
         [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+    }
+    
+    if ([segue.identifier isEqualToString:@"messageDetail"]) {
+        //
+        [segue.destinationViewController setHidesBottomBarWhenPushed:YES];
+        
+        MessageDetailViewController* messageDetailView = (MessageDetailViewController *)segue.destinationViewController;
+        
+        messageDetailView.object = [self.objects objectAtIndex:path.row];
     }
 }
 
