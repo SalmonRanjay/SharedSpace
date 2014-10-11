@@ -7,7 +7,7 @@
 //
 
 #import "RequestTableViewController.h"
-#import <Parse/Parse.h>
+
 
 @interface RequestTableViewController ()
 
@@ -15,8 +15,17 @@
 
 @implementation RequestTableViewController
 
+- (id) initWithCoder:(NSCoder *)aDecoder
+{
+    self = [super initWithCoder:aDecoder];
+    self.parseClassName = @"Requests";
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.parseClassName = @"Requests";
     
     PFUser *currentUser = [PFUser currentUser];
     if (currentUser) {
@@ -28,33 +37,88 @@
     }
 }
 
+- (void) viewWillAppear:(BOOL)animated{
+
+    [super viewWillAppear:animated];
+    
+//    PFQuery *messaegQuery = [PFQuery queryWithClassName:@"Requests"];
+//    [messaegQuery whereKey:@"recipients" containsAllObjectsInArray:@[[PFUser currentUser].objectId]];
+//    [messaegQuery findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error) {
+//        
+//        if (!error) {
+//            // you have all the messages
+//            self.messages = objects;
+//            NSLog(@"Messages: %@", self.messages);
+//        }else{
+//            
+//            NSLog(@"Error: %@ %@", error, [error userInfo]);
+//        }
+//    }];
+}
+
+- (PFQuery *)queryForTable {
+    PFQuery *query = [PFQuery queryWithClassName:self.parseClassName];
+    
+    // If no objects are loaded in memory, we look to the cache first to fill the table
+    // and then subsequently do a query against the network.
+    if (self.objects.count == 0) {
+        query.cachePolicy = kPFCachePolicyCacheThenNetwork;
+    }
+    
+    [query orderByDescending:@"createdAt"];
+    [query whereKey:@"recipients" containsAllObjectsInArray:@[[PFUser currentUser].objectId]];
+
+    return query;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
 
 #pragma mark - Table view data source
+//
+//- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+//#warning Potentially incomplete method implementation.
+//    // Return the number of sections.
+//    return 1;
+//}
+//
+//- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+//#warning Incomplete method implementation.
+//    // Return the number of rows in the section.
+//    return self.messages.count;
+//}
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+- (UITableViewCell *)tableView:(UITableView *)tableView
+         cellForRowAtIndexPath:(NSIndexPath *)indexPath
+                        object:(PFObject *)object
+{
+    static NSString *cellIdentifier = @"Cell";
     
-    // Configure the cell...
+    PFTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier];
+    if (!cell) {
+        cell = [[PFTableViewCell alloc] initWithStyle:UITableViewCellStyleSubtitle
+                                      reuseIdentifier:cellIdentifier];
+    }
+    
+    // Configure the cell to show todo item with a priority at the bottom
+    cell.textLabel.text = object[@"senderName"];
+    cell.detailTextLabel.text = object[@"newDescription"];
     
     return cell;
 }
+
+
+//- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+//    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"Cell" forIndexPath:indexPath];
+//    
+//    // Configure the cell...
+//    
+//    return cell;
+//}
 
 
 

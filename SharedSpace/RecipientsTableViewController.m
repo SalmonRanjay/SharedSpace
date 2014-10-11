@@ -146,7 +146,13 @@
     pfrequest[@"recipients"] = self.recipients;
     pfrequest[@"newDate"] = self.date;
      
-     [pfrequest saveInBackground];
+     [pfrequest saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+         //
+         NSLog(@"Er: %@", error);
+         if (error) {
+             NSLog(@"%@ %@",error,[error userInfo]);
+         }
+     }];
      
      [self dissmissSelf];
     [self.tabBarController setSelectedIndex:0];

@@ -7,10 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface RequestTableViewController : UITableViewController
+@interface RequestTableViewController : PFQueryTableViewController
 
-@property (nonatomic,strong) NSMutableArray *messages;
+@property (nonatomic,strong) NSArray *messages;
 
 @property (nonatomic, strong) NSMutableArray *requestArray;
 - (IBAction)logout:(id)sender;
